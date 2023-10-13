@@ -1,4 +1,4 @@
 .vscode/
-image.png
+*.png
 data
 __pycache__
