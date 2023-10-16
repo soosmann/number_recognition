@@ -51,6 +51,20 @@ class HandwritingRecognitionApp:
         self.pred_string = StringVar()
         self.pred_string.set("Here will be the preds.")
         self.pred_text = Label(root, textvariable=self.pred_string).place(x=760, y=400)
+
+        self.fe_description = Label(root, anchor='w', justify='left', text=
+            """
+            Desciption:
+            In this application you can write a number on the canvas at the top left.
+            When writing, the image you write is redrawn (image in the middle), 
+            compressed and then fed into a neural network.
+            This neural network is trained with the MNIST handwritten numbers dataset 
+            and predicts the number which is written on the canvas.
+            At the top right the image fed into the neural network is shown in higher resolution (original: 28x28).
+            The probablities for every number are displayed at the bottom right.
+            You can use the drawing options above this text.
+            Dont write too fast because making a copy of the drawn image creates a small delay!
+            """).place(x=10, y=500)
         
         # bind mouse events to canvas
         self.canvas.bind("<Button-1>", self.start_drawing)
